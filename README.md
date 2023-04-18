@@ -1,41 +1,57 @@
-# Larawind - Laravel 10.0+ Jetstream and Tailwind CSS Admin Theme
+# Proyecto RRHH IPDUV
+Descripción
 
-This project is created with [Laravel Jetstream](https://jetstream.laravel.com/1.x/introduction.html) Framework and [Tailwind CSS](https://tailwindcss.com), the admin environment is desing by [Windmill Dashboard](https://windmill-dashboard.vercel.app/).
 
-## Requirements
+## Entornos
 
--   Laravel installer
--   Composer
--   Npm installer
 
-## Installation
+[Pruebas](http://url-prueba.chaco.gob.ar/)
+[Producción](https://url.chaco.gob.ar/)
 
-```
-# Clone the repository from GitHub and open the directory:
-git clone https://github.com/miten5/larawind.git
 
-# cd into your project directory
-cd larawind
 
-#install composer and npm packages
-composer install
-npm install && npm run dev
 
-# Start prepare the environment:
-cp .env.example .env // setup database credentials
-php artisan key:generate
-php artisan migrate
-php artisan storage:link
+## Instalación
 
-# Run your server
-php artisan serve
 
+Clonar el repositorio y luego
+
+
+```console
+cd rrhh
+docker-compose up -d
+docker exec rrhh composer install
 ```
 
-If you like my work [Buy me a coffee](https://www.buymeacoffee.com/miten5)
+## Agregar al .env
 
-### Project made possible thanks to:
+```console
+DB_CONNECTION=mysql
+DB_HOST=mariadb
+DB_PORT=3306
+DB_DATABASE=admin
+DB_USERNAME=root
+DB_PASSWORD=admin
+```
 
--   [Laravel Jetstream](https://jetstream.laravel.com/1.x/introduction.html)
--   [Tailwind CSS](https://tailwindcss.com/)
--   [Windmill Dashboard](https://windmill-dashboard.vercel.app/)
+
+#### Variables adicionales .env.local:
+
+
+#### Database
+
+
+```console
+docker exec rrhh-php php artisan migrate
+```
+
+
+#### Docker url
+   * http://127.0.0.1:8082
+
+
+### Usado
+## Nombrar todos los frameworks utilizados.
+- Laravel Versión 10
+- [Breeze]
+- [TailwindCSS](https://tailwindcss.com/) | [Bootstrap 5] 
